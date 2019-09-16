@@ -8,7 +8,7 @@ pipeline {
     }
     stage("Upload to AWS") {
         steps {
-          withAWS(region:'us-east-1',credentials:'Jenkins') {
+          withAWS(region:'us-east-1',credentials:'MyCredentials') {
             s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:'essential.html', bucket:'c3pipelines0210')
           }
     }
