@@ -8,7 +8,7 @@ pipeline {
     }
     stage("Build Dockerfile") {
       steps {
-        sh "tidy -q -e *.html"
+        sh "build_docker.sh"
       }
     }
     stage("Upload Dockerfile") {
