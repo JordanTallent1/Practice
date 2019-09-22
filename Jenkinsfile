@@ -13,9 +13,11 @@ pipeline {
     }
     stage("Upload Dockerfile") {
       steps {
-        withCredentials([file(credentialsId: 'docker_password', variable: 'var_docker_password')])
-        sh "chmod +x ./upload_docker.sh"
-        sh "./upload_docker.sh"
+        withCredentials([string(credentialsId: 'docker_password', variable: 'var_docker_password')]) {
+          sh "echo $var_docker_password | base64"
+          sh "chmod +x ./upload_docker.sh"
+          sh "./upload_docker.sh"
+        }
       }
     }
     stage("Upload to AWS") {
