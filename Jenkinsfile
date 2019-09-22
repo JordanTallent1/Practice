@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage("Build Dockerfile") {
       steps {
-        sh "make install"
+        sh "sudo make install"
       }
     }
     stage("Test Dockerfile") {
