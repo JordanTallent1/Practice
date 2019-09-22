@@ -14,7 +14,8 @@ pipeline {
     }
     stage("Upload Dockerfile") {
       steps {
-        sh "tidy -q -e *.html"
+        sh "chmod +x ./upload_docker.sh"
+        sh "./upload_docker.sh"
       }
     }
     stage("Upload to AWS") {
