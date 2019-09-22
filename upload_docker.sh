@@ -10,7 +10,7 @@ dockerpath=project5
 # Step 2:
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
-docker login --username jtallent2019 --password $var_docker_password
+echo $var_docker_password | docker login --username jtallent2019 --password-stdin
 docker tag capstone jtallent2019/capstone:version1.0
 
 # Step 3:
