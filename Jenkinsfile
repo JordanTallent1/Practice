@@ -1,12 +1,12 @@
 pipeline {
   agent any 
   stages {
-    stage("Build Dockerfile") {
+    stage("Test Dockerfile") {
       steps {
         sh "make install"
       }
     }
-    stage("Test Dockerfile") {
+    stage("Build Dockerfile") {
       steps {
         sh "tidy -q -e *.html"
       }
