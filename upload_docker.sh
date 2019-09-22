@@ -11,7 +11,7 @@ dockerpath=project5
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
 cat ./my_password.txt| docker login --username jtallent2019 --password-stdin
-docker tag project5 jtallent2019/project5:version1.0
+docker tag capstone jtallent2019/capstone:version1.0
 
 # Step 3:
-docker push jtallent2019/project5
+docker push jtallent2019/capstone
