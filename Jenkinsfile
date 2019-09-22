@@ -8,7 +8,7 @@ pipeline {
     }
     stage("Build Dockerfile") {
       steps {
-        sh "./build_docker.sh"
+        sh "chmod +x ./build_docker.sh"
       }
     }
     stage("Upload Dockerfile") {
