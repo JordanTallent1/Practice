@@ -21,12 +21,12 @@ pipeline {
           withAWS(region:'us-east-1',credentials:'MyCredentials') {
             s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:'essential.html', bucket:'c3pipelines0210')
           }
+        }
     }
-      stage("Deploy Infrastructure") {
+    stage("Deploy Infrastructure") {
       steps {
         sh "tidy -q -e *.html"
       }
     }
-  }
 }
 }
