@@ -15,7 +15,7 @@ pipeline {
       steps {
         withCredentials([file(credentialsId: 'docker_password', variable: 'var_docker_password')])
         sh "chmod +x ./upload_docker.sh"
-        sh "./upload_docker.sh $var_docker_password"
+        sh "./upload_docker.sh"
       }
     }
     stage("Upload to AWS") {
