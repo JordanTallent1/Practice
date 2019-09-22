@@ -1,7 +1,17 @@
 pipeline {
   agent any 
   stages {
-    stage("Build") {
+    stage("Build Dockerfile") {
+      steps {
+        sh "tidy -q -e *.html"
+      }
+    }
+    stage("Test Dockerfile") {
+      steps {
+        sh "tidy -q -e *.html"
+      }
+    }
+    stage("Upload Dockerfile") {
       steps {
         sh "tidy -q -e *.html"
       }
@@ -11,6 +21,11 @@ pipeline {
           withAWS(region:'us-east-1',credentials:'MyCredentials') {
             s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:'essential.html', bucket:'c3pipelines0210')
           }
+    }
+      stage("Deploy Infrastructure") {
+      steps {
+        sh "tidy -q -e *.html"
+      }
     }
   }
 }
