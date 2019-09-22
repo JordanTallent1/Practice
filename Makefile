@@ -13,7 +13,7 @@ setup:
 install:
 	# This should be run from inside a virtualenv
 	python3 -m pip install --upgrade pip &&\
-	python3 -m pip install -r requirements.txt
+	python3 -m pip install --user -r requirements.txt
 
 test:
 	# Additional, optional, tests could go here
