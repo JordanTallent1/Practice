@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ## Complete the following steps to get Docker running locally
-
+echo "hello world"
 # Step 1:
 docker build --tag=capstone .
 
