@@ -17,4 +17,4 @@ kubectl get pod
 
 # Step 4:
 # Forward the container port to a host
-kubectl port-forward pod/test3-8555b66597-sqrm5 8000:80
+# kubectl port-forward pod/test3-8555b66597-sqrm5 8000:80
