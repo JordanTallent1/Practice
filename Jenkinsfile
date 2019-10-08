@@ -27,7 +27,7 @@ pipeline {
           }
         }
     }
-    stage("Deploy Infrastructure") {
+    stage("Deploy to Infrastructure") {
       steps {
         sh "tidy -q -e *.html"
       }
