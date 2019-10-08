@@ -4,7 +4,6 @@ pipeline {
     stage("Test Dockerfile") {
       steps {
         sh "tidy -q -e *.html"
-        sh "hadolint Dockerfile"
       }
     }
     stage("Build Dockerfile") {
@@ -23,7 +22,8 @@ pipeline {
     }
     stage("Deploy to Infrastructure") {
       steps {
-        sh "tidy -q -e *.html"
+        sh "chmod +x ./upload_docker.sh"
+          sh "./upload_docker.sh"
       }
     }
 }
