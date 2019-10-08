@@ -4,6 +4,7 @@ pipeline {
     stage("Test Dockerfile") {
       steps {
         sh "tidy -q -e *.html"
+        sh "hadolint Dockerfile"
       }
     }
     stage("Build Dockerfile") {
