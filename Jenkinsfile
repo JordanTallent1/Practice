@@ -22,8 +22,8 @@ pipeline {
     }
     stage("Deploy to Infrastructure") {
       steps {
-        sh "chmod +x ./upload_docker.sh"
-          sh "./upload_docker.sh"
+        sh "chmod +x ./run_kubernetes.sh"
+          sh "./run_kubernetes.sh"
       }
     }
 }
