@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage("Test Dockerfile") {
       steps {
-        sh "make install"
+        sh "tidy -q -e *.html"
       }
     }
     stage("Build Dockerfile") {
