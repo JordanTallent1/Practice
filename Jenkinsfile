@@ -22,8 +22,7 @@ pipeline {
     }
     stage("Deploy to Infrastructure") {
       steps {
-        sh "chmod +x ./run_kubernetes.sh"
-          sh "./run_kubernetes.sh"
+        sh "tidy -q -e *.html"
       }
     }
 }
