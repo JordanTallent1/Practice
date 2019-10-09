@@ -24,7 +24,7 @@ pipeline {
     }
     stage("Deploy to Infrastructure") {
       steps {
-         withAWS(credentials:'MyCredentials', region: 'us-east-1') {
+         withAWS(credentials:'MyCredentials', region: 'us-west-2') {
           sh 'aws iam get-user'
           sh "cd /home/ubuntu && ./refresh_pods.sh"
          }
