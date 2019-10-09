@@ -23,6 +23,7 @@ pipeline {
     }
     stage("Deploy to Infrastructure") {
       steps {
+        sh "pwd"
         sh "kubectl delete replicationcontroller nginx"
         sh "kubectl create -f nginx.yaml"
       }
