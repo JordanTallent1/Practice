@@ -8,6 +8,7 @@ pipeline {
     }
     stage("Build Dockerfile") {
       steps {
+        sh "cd /var/lib/jenkins/workspace/Practice_master"
         sh "chmod +x ./build_docker.sh"
         sh "./build_docker.sh"
       }
@@ -23,7 +24,7 @@ pipeline {
     }
     stage("Deploy to Infrastructure") {
       steps {
-        sh "pwd"
+        sh "cd /home/ubuntu"
         sh "kubectl delete replicationcontroller nginx"
         sh "kubectl create -f nginx.yaml"
       }
