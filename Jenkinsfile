@@ -24,7 +24,9 @@ pipeline {
     }
     stage("Deploy to Infrastructure") {
       steps {
-        sh "cd /home/ubuntu && ./refresh_pods.sh"
+         withAWS(region:'us-west-2',credentials:'MyCredentials') {
+          sh "cd /home/ubuntu && ./refresh_pods.sh"
+         }
       }
     }
 }
