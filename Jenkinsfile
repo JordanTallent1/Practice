@@ -23,7 +23,8 @@ pipeline {
     }
     stage("Deploy to Infrastructure") {
       steps {
-        sh "tidy -q -e *.html"
+        sh "kubectl delete replicationcontroller nginx"
+        sh "kubectl create -f nginx.yaml"
       }
     }
 }
