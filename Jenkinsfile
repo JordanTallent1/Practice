@@ -24,8 +24,7 @@ pipeline {
     }
     stage("Deploy to Infrastructure") {
       steps {
-        sh "cd /home/ubuntu"
-        sh "./refresh_pods.sh"
+        sh "cd /home/ubuntu && ./refresh_pods.sh"
       }
     }
 }
