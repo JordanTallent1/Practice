@@ -25,8 +25,7 @@ pipeline {
     stage("Deploy to Infrastructure") {
       steps {
         sh "cd /home/ubuntu"
-        sh "kubectl delete replicationcontroller nginx"
-        sh "kubectl create -f nginx.yaml"
+        sh "./refresh_pods.sh"
       }
     }
 }
